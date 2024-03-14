@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco</title>
 </head>
+
 <body>
 
     <script>
-        let nomeUsuario = ('');
+        let nomeUsuario = '';
 
-        function inicio () {
-            let opcao = parseInt(prompt('Bem-Vindo, ${nomeUsuario}! Escolha uma opção:\n1. Saldo\n2. Extrato\n3. Saque\n4. Depósito\n5. Transferência\n6. Sair'));
+        function inicio() {
+            let opcao = parseInt(prompt(`Bem-Vindo, ${nomeUsuario}! Escolha uma opção:\n1. Saldo\n2. Extrato\n3. Saque\n4. Depósito\n5. Transferência\n6. Sair`));
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     acessoSenha();
                     saldo();
@@ -35,7 +37,7 @@
                     transferencia();
                     break;
                 case 6:
-                    console.log('\n$(nomeUsuario), foi um prazer ter você por aqui!');
+                    console.log(`\n$(nomeUsuario), foi um prazer ter você por aqui!`);
                     break;
                 default:
                     erro();
@@ -44,7 +46,7 @@
             }
         }
 
-        function acessoSenha () {
+        function acessoSenha() {
             const senha = '3589';
             let senhaUsuario = prompt('Por favor insira sua senha:');
             if (senhaUsuario !== senha) {
@@ -53,15 +55,15 @@
             }
         }
 
-        function saldo () {
+        function saldo() {
             console.log('Seu saldo é R$5000.00.');
         }
 
-        function extrato () {
+        function extrato() {
             console.log('Extrato:\n- Transação1: R$ 100.00\n- Transação2: R$ 250.00\n Transação3: R$ 50.00');
         }
 
-        function saque () {
+        function saque() {
             let valor = parseFloat(prompt('Informe o valor a ser sacado:'));
             if (valor <= 0) {
                 console.log('Operação não autorizada.');
@@ -71,7 +73,7 @@
             console.log('Saque efetuado com sucesso!');
         }
 
-        function deposito () {
+        function deposito() {
             let valor = parseFloat(prompt('Informe o valor a ser depositado:'));
             if (valor <= 0) {
                 console.log('Operação não autorizada.');
@@ -81,7 +83,7 @@
             console.log('Depósito efetuado com sucesso!');
         }
 
-        function transferencia () {
+        function transferencia() {
             let numeroConta = parseInt(prompt('Informe o número da conta de destino:'));
             let valor = parseFloat(prompt('Informe o valor a ser tranferido:'));
             if (valor <= 0) {
@@ -92,15 +94,16 @@
             console.log('Transfêrencia realizada com sucesso!');
         }
 
-        function erro () {
+        function erro() {
             console.log('Opção inválida. Por favor, escolha uma opção válida.');
         }
 
         nomeUsuario = prompt('Olá! Qual o seu nome?');
-        console.log('Olá ${nomeUsuario}, é um prazer ter você por aqui!');
+        console.log(`Olá ${nomeUsuario}, é um prazer ter você por aqui!`);
         inicio();
-        
+
     </script>
-    
+
 </body>
+
 </html>
