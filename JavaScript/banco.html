@@ -37,7 +37,7 @@
                     transferencia();
                     break;
                 case 6:
-                    console.log(`\n$(nomeUsuario), foi um prazer ter você por aqui!`);
+                    console.log(`\n${nomeUsuario}, foi um prazer ter você por aqui!`);
                     break;
                 default:
                     erro();
@@ -56,11 +56,13 @@
         }
 
         function saldo() {
-            console.log('Seu saldo é R$5000.00.');
+            console.log('Seu saldo é.' + saldo);
+            inicio();
         }
 
         function extrato() {
             console.log('Extrato:\n- Transação1: R$ 100.00\n- Transação2: R$ 250.00\n Transação3: R$ 50.00');
+            inicio();
         }
 
         function saque() {
@@ -71,16 +73,19 @@
             }
 
             console.log('Saque efetuado com sucesso!');
+            inicio();
         }
 
         function deposito() {
             let valor = parseFloat(prompt('Informe o valor a ser depositado:'));
             if (valor <= 0) {
                 console.log('Operação não autorizada.');
+                saldo +=deposito;
                 return;
             }
 
             console.log('Depósito efetuado com sucesso!');
+            inicio();
         }
 
         function transferencia() {
@@ -92,10 +97,20 @@
             }
 
             console.log('Transfêrencia realizada com sucesso!');
+            inicio();
         }
 
         function erro() {
             console.log('Opção inválida. Por favor, escolha uma opção válida.');
+        }
+
+        function sair() {
+            let confirma = confirm('Você deseja sair?');
+            if (confirma) {
+            window.close();
+            } else {
+                inicio();
+            }
         }
 
         nomeUsuario = prompt('Olá! Qual o seu nome?');
